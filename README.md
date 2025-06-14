@@ -1,4 +1,4 @@
-# lerobot
+# LeRobot Worldwide Hackathon
 ![image](https://github.com/user-attachments/assets/de501d45-9256-484f-992b-fa4118b8c2be)
 
 LINKS
