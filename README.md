@@ -121,4 +121,54 @@ Acesse o link para verificar o upload:
 https://huggingface.co/${HF_USER}/so101_block_pickup
 Use code with caution.
 
+SUGESTÃO DE MVP
+Objetivo do MVP:
+O braço deve pegar um objeto (um bloco, por exemplo) e, usando a câmera, verificar se o objeto possui um selo de reciclagem. Se o selo for detectado, o braço deve sinalizar que o objeto é reciclável.
+Passos:
+Configuração Inicial (1 hora):
+Configure o ambiente de simulação LeRobot.
+Importe as bibliotecas necessárias (PIL, NumPy, OpenCV, etc.).
+Adapte o código fornecido para funcionar no simulador.
+Identifique a câmera no simulador.
+Captura de Imagem (1 hora):
+Use a função save_images_from_all_cameras do código fornecido para capturar uma imagem do objeto.
+Simplifique a função para capturar apenas uma imagem.
+Salve a imagem em um arquivo.
+Detecção do Selo de Reciclagem (4 horas):
+Simplificação: Para o MVP, use uma detecção de selo de reciclagem muito simples. Em vez de treinar um modelo complexo, use um template matching (correspondência de modelo).
+Template Matching: Crie um template (imagem) do selo de reciclagem.
+Use a função cv2.matchTemplate do OpenCV para procurar o template na imagem capturada.
+Se a correspondência for encontrada com uma confiança acima de um certo limite, considere que o selo foi detectado.
+Controle do Braço (2 horas):
+Use a API do LeRobot para controlar o braço.
+Se o selo de reciclagem for detectado, faça com que o braço execute uma ação (por exemplo, acenda um LED, mova o braço para uma posição específica).
+Se o selo não for detectado, faça com que o braço execute outra ação (por exemplo, desligue o LED, mova o braço para outra posição).
+Demonstração (1 hora):
+Grave um vídeo curto demonstrando o funcionamento do MVP.
+Código de Exemplo (Detecção do Selo de Reciclagem):
+import cv2
+import numpy as np
 
+def detect_recycling_seal(image_path, template_path, threshold=0.8):
+    """Detecta o selo de reciclagem em uma imagem usando template matching."""
+    img = cv2.imread(image_path, 0)
+    template = cv2.imread(template_path, 0)
+    w, h = template.shape[::-1]
+
+    res = cv2.matchTemplate(img, template, cv2.TM_CCOEFF_NORMED)
+    loc = np.where(res >= threshold)
+
+    if len(loc[0]) > 0:
+        return True  # Selo detectado
+    else:
+        return False  # Selo não detectado
+Use code with caution.
+Python
+Observações:
+Este é um MVP muito simplificado. A detecção do selo de reciclagem é baseada em template matching, que pode ser sensível a variações de iluminação, rotação e escala.
+Para um sistema mais robusto, você precisaria treinar um modelo de detecção de objetos usando um conjunto de dados de imagens de selos de reciclagem.
+O controle do braço é simplificado. Você pode adicionar mais funcionalidades, como ajuste fino da posição do braço e feedback visual.
+Recursos:
+Documentação do OpenCV: https://docs.opencv.org/
+Documentação do LeRobot: https://huggingface.co/docs/lerobot/integrate_hardware
+Este plano deve te ajudar a criar um MVP funcional em 9 horas. Lembre-se de simplificar ao máximo e focar nos aspectos essenciais do projeto.
