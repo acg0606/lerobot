@@ -54,3 +54,65 @@ Hugging Face Hub: Certifique-se de ter uma conta no Hugging Face Hub e de ter um
 Documentação: Consulte a documentação oficial do LeRobot para obter informações detalhadas sobre a API e os comandos disponíveis.
 
 Lembre-se de que o objetivo principal é demonstrar a capacidade de treinar uma política para controlar um robô real com base em dados de demonstração. Concentre-se em gravar um dataset de alta qualidade e treinar uma política que possa realizar a tarefa com sucesso.
+
+Passo 1: Gravação e Upload do Dataset (Simulador)
+1.1 Configuração Inicial:
+Login no Hugging Face Hub: (Mesmo passo)
+huggingface-cli login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
+Use code with caution.
+Bash
+Obtenha seu Nome de Usuário: (Mesmo passo)
+HF_USER=$(huggingface-cli whoami | head -n 1)
+echo $HF_USER
+Use code with caution.
+Bash
+
+1.2 Gravação do Dataset (Simulador):
+Execute o comando de gravação:
+python -m lerobot.record \
+    --robot.type=so101_follower \
+    --robot.id=my_awesome_follower_arm \
+    --display_data=true \
+    --dataset.repo_id=${HF_USER}/so101_block_pickup \
+    --dataset.num_episodes=2 \
+    --dataset.single_task="Grab the black cube"
+Use code with caution.
+Bash
+
+Importante: No simulador, você não precisa especificar as portas seriais (--robot.port e --teleop.port). O simulador lida com a comunicação internamente.
+Você controlará o robô no simulador usando o teclado ou outro dispositivo de entrada.
+
+1.3 Verificação do Upload: (Mesmo passo)
+Acesse o link para verificar o upload:
+https://huggingface.co/datasets/${HF_USER}/so101_block_pickup
+Use code with caution.
+
+
+Passo 2: Treinamento e Upload da Política (Simulador)
+
+2.1 Treinamento da Política:
+
+Execute o script de treinamento:
+python lerobot/scripts/train.py \
+  --dataset.repo_id=${HF_USER}/so101_block_pickup \
+  --policy.type=act \
+  --output_dir=outputs/train/act_so101_block_pickup \
+  --job_name=act_so101_block_pickup \
+  --policy.device=cuda \
+  --wandb.enable=true
+Use code with caution.
+Bash
+Os parâmetros são os mesmos do exemplo anterior.
+
+2.2 Upload do Modelo Treinado: (Mesmo passo)
+huggingface-cli upload ${HF_USER}/so101_block_pickup \
+  outputs/train/act_so101_block_pickup/checkpoints/last/pretrained_model
+Use code with caution.
+Bash
+
+2.3 Verificação do Upload: (Mesmo passo)
+Acesse o link para verificar o upload:
+https://huggingface.co/${HF_USER}/so101_block_pickup
+Use code with caution.
+
+
