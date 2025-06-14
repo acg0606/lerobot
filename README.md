@@ -1,8 +1,20 @@
 # lerobot
 
+LINKS
+https://huggingface.co/LeRobot-worldwide-hackathon
 
 
+https://huggingface.co/docs/lerobot/index
+https://huggingface.co/datasets/LeRobot-worldwide-hackathon/Lerobot_dataset_V1
+https://huggingface.co/datasets/LeRobot-worldwide-hackathon/datasets
+https://huggingface.co/datasets/LeRobot-worldwide-hackathon/submissions
+https://huggingface.co/datasets/LeRobot-worldwide-hackathon/laundrymasters-fold
+https://huggingface.co/LeRobot-worldwide-hackathon/50000-MatchaMadness-new_arm
+https://huggingface.co/docs/lerobot/en/getting_started_real_world_robot
+https://huggingface.co/docs/lerobot/integrate_hardware
 
+PDF
+https://cdn-lfs-us-1.hf.co/repos/6a/6c/6a6cba86904a84ebd14b76fcdfd73322793b6e476811e98e2d9f0dc032803289/120d64a8a7ba1a8ee583814f0127476c03f219c372651298f4fcb5101c31069b?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27Challenges.pdf%3B+filename%3D%22Challenges.pdf%22%3B&response-content-type=application%2Fpdf&Expires=1749923932&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0OTkyMzkzMn19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzZhLzZjLzZhNmNiYTg2OTA0YTg0ZWJkMTRiNzZmY2RmZDczMzIyNzkzYjZlNDc2ODExZTk4ZTJkOWYwZGMwMzI4MDMyODkvMTIwZDY0YThhN2JhMWE4ZWU1ODM4MTRmMDEyNzQ3NmMwM2YyMTljMzcyNjUxMjk4ZjRmY2I1MTAxYzMxMDY5Yj9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSomcmVzcG9uc2UtY29udGVudC10eXBlPSoifV19&Signature=u3lQzzMH6hV5oB7aQ%7E%7EjDyuYOQId%7EqrG4cgQtvvgc7pZVIRx3zslqzsL5l4nSBlya6vZIe2NVKlHypStEtqACIDwiXeEBn5PxB%7EeDoEE%7E2bNWLK5yo5IeDsXdETmSa%7Eb%7Ex717qI9uCr0Fu6zd2Rf0f0CwIdsF5nZ94VyMNGXkSuMzl7JtRW6x-u9rOdwgQd5sZBD-ku7ieE-wZsAWsQCknm6aZy2%7Ez-SljHaAsufeSmT%7EfZg3gcCdhlc5CXpi%7EilnuN6W%7EvvoAJx58-HoZ77ES35PD2UTHcm5iT26HaOiqUnRbHLptFcU9FM9SgLEXqmDrDsDh4Ol3QHSEymuUqbsA__&Key-Pair-Id=K24J24Z295AEI9
 
 ENTREGA
 
